@@ -5,6 +5,8 @@ from .models import Review
 from django.views.decorators.csrf import csrf_exempt
 
 @login_required
+# FIX: CSRF
+# Remove @csrf_exempt
 @csrf_exempt
 def addReviewView(request):
   target = User.objects.get(username=request.POST.get('to'))

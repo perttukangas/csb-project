@@ -25,7 +25,10 @@
     <h2>Send a review</h2>
 
     <form action="add/" method="POST" enctype="multipart/form-data">
+      
+      <!-- FIX: CSRF -->
       <!-- {% csrf_token %} -->
+
       To:
       <select name="to">
         {% for user in users %}
