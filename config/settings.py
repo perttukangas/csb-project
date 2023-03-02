@@ -88,6 +88,9 @@ DATABASES = {
 }
 
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
+# FIX: Identification and Authentication Failures
+# Remove the following line
 SESSION_ENGINE = 'config.simplesession'
 
 

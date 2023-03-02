@@ -93,6 +93,12 @@ Links to fixes:
 
 ### Description
 
+When user logs in session id is generated for them. Currently project has really weak session id generator. Session id are currently in form of `<int>-verysekretsession-<int>` which means attacker can easily crack current sessions. Using these cracked sessions attacker can do anything they want as that user. In this case it would be mean that they could read user's reviews and send inappropriate reviews to others.
+
 ### How to fix it
 
-simple session
+This flaw is also really easy to fix as Django handles this automatically and I had to intentionally cause this. We'll have to change `SESSION_ENGINE` to engine that does better cryptographic signing. In Django this means that we'll let the `SESSION_ENGINE` use the default one by removing it from `settings.py`. Django uses `SECRET_KEY` to sign the session id. As mentioned `SECRET_KEY` is used here which is why flaw 4 is also really important to fix.
+
+Links to fixes:
+- Fix secret engine: INSERT LINK
+- Delete simplesession.py: INSERT LINK
