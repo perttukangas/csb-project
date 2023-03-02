@@ -5,6 +5,8 @@
   {% for review in received %}
   <li>
     <p>From {{review.source.username}}</p>
+    <!-- FIX: XSS -->
+    <!-- <p>{{review.content}}</p> -->
     <p>{{review.content|safe}}</p>
   </li>
   {% endfor %}
@@ -15,6 +17,8 @@
   {% for review in given %}
   <li>
     <p>To {{review.target.username}}</p>
+    <!-- FIX: XSS -->
+    <!-- <p>{{review.content}}</p> -->
     <p>{{review.content|safe}}</p>
   </li>
   {% endfor %}
