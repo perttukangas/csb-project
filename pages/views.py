@@ -16,8 +16,14 @@ def homePageView(request):
   users = User.objects.exclude(pk=request.user.id)
   return render(request, 'pages/index.html', {'users': users})
 
+# FIX: Broken Access Control
+# @login_required
 def reviewsView(request, userid):
   user = User.objects.get(pk=userid)
+
+  # FIX: Broken Access Control
+  # user = request.user
+
   received = Review.objects.filter(target=user)
   given = Review.objects.filter(source=user)
   return render(request, 'pages/reviews.html', {'received': received, 'given': given})

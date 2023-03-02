@@ -4,7 +4,7 @@ LINK: https://github.com/Perttu-Kangas/csb-project
 
 This project uses OWASP 2021 list.
 
-Make sure you have Python and Django installed. App can be started with `python3 manage.py runserver`.
+Make sure you have Python and Django installed.
 
 ## Installation
 
@@ -15,28 +15,67 @@ Make sure you have Python and Django installed. App can be started with `python3
 
 ## FLAW 1: Broken Access Control
 
-exact source link pinpointing flaw 1...
-description of flaw 1...
-how to fix it...
+#### Exact source
 
-reviews/<user id> can be accessed by anyone
+- INSERT LINK
+
+#### Description
+
+The review route gets user id as parameters when doing GET request to `review/<user id>`. However this route doesn't have login required, and it also allows everyone to see other user's received and given reviews, which should be hidden from others than participants of the review. Meaning by simply changing the user id anyone can see every review.
+
+#### How to fix it
+
+This flaw can be fixed by first making the route require login to access. Then the route should be changed to just `review/`. After that the user should be fetched from request, and not from the url.
+
+Links to fixes:
+- Fix login required: INSERT LINK
+- Fix user fetch: INSERT LINK
+- Fix url path: INSERT LINK
 
 ## FLAW 2: Cross-Site Request Forgery (CSRF)
 
-exact source link pinpointing flaw 2...
-description of flaw 2...
-how to fix it...
+#### Exact source
+
+- INSERT LINK
+
+#### Description
+
+#### How to fix it
 
 review post doesn't include csrf token
 
 ## FLAW 3: Injection (Cross-Site Scripting (XSS))
 
+#### Exact source
+
+- INSERT LINK
+
+#### Description
+
+#### How to fix it
+
 reviews.html
 
 ## FLAW 4: Cryptographic Failures
 
+#### Exact source
+
+- INSERT LINK
+
+#### Description
+
+#### How to fix it
+
 secret key in git, debug is true, dev database is in git
 
 ## FLAW 5: Identification and Authentication Failures
+
+#### Exact source
+
+- INSERT LINK
+
+#### Description
+
+#### How to fix it
 
 simple session
