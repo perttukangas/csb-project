@@ -1,0 +1,21 @@
+<a href="/">Home</a>
+
+<h2>Received</h2>
+<ul>
+  {% for review in received %}
+  <li>
+    <p>From {{review.source.username}}</p>
+    <p>{{review.content|safe}}</p>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Given</h2>
+<ul>
+  {% for review in given %}
+  <li>
+    <p>To {{review.target.username}}</p>
+    <p>{{review.content|safe}}</p>
+  </li>
+  {% endfor %}
+</ul>
