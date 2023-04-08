@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_#h3^7@u)4ry6p@q_%uh%0tdah_47*k0it0pobh%p-c_2b=u0n'
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SESSION_COOKIE_HTTPONLY = False
 
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'pages'
+    'pages'
 ]
 
 MIDDLEWARE = [
@@ -87,7 +87,7 @@ DATABASES = {
     }
 }
 
-DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # FIX: Identification and Authentication Failures
 # Remove the following line
